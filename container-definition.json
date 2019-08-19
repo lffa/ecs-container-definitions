@@ -1,0 +1,36 @@
+[
+  {
+    "cpu": 0,
+    "environment":[
+      ${env}
+     ],
+    "secrets": [
+      ${secrets}
+    ],
+    "essential":true,
+
+    "image":      "${repo_url}",
+    "logConfiguration":{
+      "logDriver":"awslogs",
+        "options":{
+          "awslogs-group":"${cloudwatch_group}",
+          "awslogs-region":"${region}",
+           "awslogs-stream-prefix":"${cloudwatch_group_prefix}"
+          }
+        },
+    ${healthcheck_json_blk}
+
+    "mountPoints":[
+    ],
+    "name":"${app_name}",
+    "portMappings":[
+      {
+        "containerPort":${port},
+        "hostPort":${port},
+        "protocol":"tcp"
+      }
+    ],
+    "volumesFrom":[
+      ]
+  }
+]
