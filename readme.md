@@ -1,6 +1,6 @@
 ### Container definitions
 
-Use this module to create a json template for feeding into the ecs task definition. it uses templatefile which is only availabel in terraform version 12.
+Use this module to create a json template for feeding into the ecs task definition. it uses templatefile which is only available in terraform version 12.
 
 It supports environment variables and secret definitions.
 
