@@ -8,7 +8,7 @@ It supports environment variables and secret definitions.
 
 ````bash
 module "container-definition-file-web-test" {
-  source             ="git::ssh://git@nzgit01.novozymes.com/terraform-modules-nz/tf12-container-definitions.git?ref=develop"
+  source             = "git::ssh://git@github.com:lffa/ecs-container-definitions.git?ref=master"
   repo_url           = "${module.service-ecr.ecr_repository_url[0]}:latest"
   web_app_name       = var.web_app_name
   region             = var.region
